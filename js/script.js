@@ -1,6 +1,9 @@
 // definisco l'elenco delle email che possono accedere
 const emailList = ["pincopallino@gmail.com", "gino@hotmail.it", "perryornitorinco@gmail.com", "mauriziosenzacollo@libero.it"];
 
+// definisco la variabile che mi collega all'html
+const loginResult = document.getElementById('email-login');
+
 // definisco la variabile flag
 let flag = false;
 
@@ -18,20 +21,28 @@ for (let i = 0; i < emailList.length; i++) {
 
 // stampo i risultati in base all'esito del confronto
 if (flag) {
-    console.log('email validata, accesso consentito!');
+    loginResult.append('email validata, accesso consentito!');
 } else {
-    console.log('Accesso non autorizzato!');
+    loginResult.append('Accesso non autorizzato!');
 }
 
 // ------------------------------------------------------------------------------------
 
-// Genero un numero casuale da 1 a 6 per il computer e per il giocatore
+// definisco la variabile che mi collega all'html
+const diceGame = document.getElementById('dice-game');
+
+// Genero due numeri casuali da 1 a 6
+// num1 per il computer
 let num1 = Math.floor(Math.random() * 6) + 1;
+
+// num2 per il giocatore
 let num2 = Math.floor(Math.random() * 6) + 1;
+
+// uso un ciclo if per confrontare i due numeri casuali e determinando il vincitore
 if (num1 === num2) {
-    console.log('Pareggio');
+    diceGame.append('Pareggio');
 } else if (num1 > num2) {
-    console.log('Vince 1');
+    diceGame.append('Vince il computer');
 } else {
-    console.log('Vince 2');
+    diceGame.append('Vince il giocatore');
 }
